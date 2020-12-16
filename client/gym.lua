@@ -14,8 +14,7 @@ Config = {}
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
-		TriggerServerEvent('xman_gym:server:check')
-		if membership == true then
+		if ESX.PlayerData.job then
 			local playerPed = PlayerPedId()
 			local playerCoords = GetEntityCoords(playerPed)
 

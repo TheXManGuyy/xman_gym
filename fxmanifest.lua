@@ -11,11 +11,6 @@ client_scripts {
 	'config.lua'
 }
 
-server_scripts {
-	'server/gym.lua',
-	'config.lua'
-}
-
 dependencies {
 	'es_extended',
 	'progressBars',
