@@ -7,7 +7,7 @@
   * [progressBars](https://github.com/EthanPeacock/progressBars)
   * [gamz-skillsystem](https://github.com/gamziboi/gamz-skillsystem)
 
-## Download & Installation
+## Installation
   * Drag 'xman_gym' to your resources folder
   * Import 'sql.sql' file to your database.
   * Go find your server.cfg file
