@@ -14,7 +14,7 @@ Config = {}
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
-		if ESX.PlayerData.job then
+		if training == false then
 			local playerPed = PlayerPedId()
 			local playerCoords = GetEntityCoords(playerPed)
 
