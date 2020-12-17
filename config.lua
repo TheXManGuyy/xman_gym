@@ -14,7 +14,8 @@ Config.Locations = {
 	Gym = {
 	
 		Blip = {
-			Coords = vector3(-1202.9837, -1565.1718, 4.6115)
+			Coords = vector3(-1202.9837, -1565.1718, 4.6115),
+			Name = 'Gym'
 		},
 		
 		Arms = {
@@ -33,4 +34,5 @@ Config.Locations = {
 			vector3(-1200.1284, -1570.9903, 4.6115)
 		}
 	}
+
 }
