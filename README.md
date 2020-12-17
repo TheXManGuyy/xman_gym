@@ -15,4 +15,4 @@
     * start gamz-skillsystem
     * start progressBars
     * start xman_gym
-  * Start your server, and get yourself an gym_membership.  
+  * Start your server, and get yourself to gym.
