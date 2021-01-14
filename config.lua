@@ -1,5 +1,5 @@
 Config = {}
-Config.DrawDistance = 1.5
+Config.DrawDistance = 1.0
 
 -- Messages
 Config.GymDraw3D = '~g~[E]~w~ Do a workout'

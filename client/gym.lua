@@ -5,7 +5,7 @@ local training = false
 Citizen.CreateThread(function()
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
+		Citizen.Wait(5)
 	end
 end)	
 
@@ -13,7 +13,7 @@ Config = {}
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(0)
+		Citizen.Wait(5)
 		if training == false then
 			local playerPed = PlayerPedId()
 			local playerCoords = GetEntityCoords(playerPed)
@@ -177,8 +177,3 @@ function CheckTraining()
 		ESX.ShowNotification(Config.TrainAgain)
 	end
 end
-
-RegisterNetEvent('xman_gym:client:hasMember')
-AddEventHandler('xman_gym:client:hasMember', function()
-	membership = true
-end)
