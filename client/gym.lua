@@ -36,7 +36,7 @@ Citizen.CreateThread(function()
 									ClearPedTasksImmediately(playerPed)
 									FreezeEntityPosition(playerPed, false)
 									-- Here goes the skill system event
-									exports["gamz-skillsystem"]:UpdateSkill("Strength", 0.02)
+									exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
 									training = true
 								if training == true then
 									ESX.ShowNotification(Config.NeedRest)
@@ -67,7 +67,7 @@ Citizen.CreateThread(function()
 									ClearPedTasksImmediately(playerPed)
 									FreezeEntityPosition(playerPed, false)
 									-- Here goes the skill system event
-									exports["gamz-skillsystem"]:UpdateSkill("Strength", 0.02)
+									exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
 									training = true
 								if training == true then
 									ESX.ShowNotification(Config.NeedRest)
@@ -98,7 +98,7 @@ Citizen.CreateThread(function()
 									ClearPedTasksImmediately(playerPed)
 									FreezeEntityPosition(playerPed, false)
 									-- Here goes the skill system event
-									exports["gamz-skillsystem"]:UpdateSkill("Strength", 0.02)
+									exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
 									training = true
 								if training == true then
 									ESX.ShowNotification(Config.NeedRest)
@@ -129,7 +129,7 @@ Citizen.CreateThread(function()
 									ClearPedTasksImmediately(playerPed)
 									FreezeEntityPosition(playerPed, false)
 									-- Here goes the skill system event
-									exports["gamz-skillsystem"]:UpdateSkill("Strength", 0.02)
+									exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
 									training = true
 								if training == true then
 									ESX.ShowNotification(Config.NeedRest)
