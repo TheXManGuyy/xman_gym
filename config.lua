@@ -1,15 +1,16 @@
 Config = {}
-Config.DrawDistance = 1.0
-Config.TrainAmmount = 2.0
+Config.DrawDistance = 1.0  -- The distance between you and the marker.
+Config.TrainAmmount = 2.0  -- The number of skill points you get per workout.
 
 -- Messages
-Config.GymDraw3D = '~g~[E]~w~ Do a workout'
-Config.BeginExercise = 'Getting ready for an exercise..'
-Config.NeedRest = 'You need to rest..'
-Config.BeginRest = 'You started resting!'
-Config.ProgressBar = 'Doing my workout'
-Config.TrainAgain = 'You can do workout again!'
+Config.GymDraw3D = '~g~[E]~w~ Do a workout'  -- A message that is displayed when you are close to an exercise.
+Config.BeginExercise = 'Getting ready for an exercise..' -- Message witch is shown when you are getting ready for exercise.
+Config.NeedRest = 'You need to rest..'  -- Message showing that you need to rest to do some exercises again.
+Config.BeginRest = 'You started resting!'  -- Message letting you know when you start resting.
+Config.ProgressBar = 'Doing my workout'  -- Message shown on progressbar when you are doing exercise.
+Config.TrainAgain = 'You can do workout again!'  -- Message letting you know when you are ready to do some exercises again.
 
+ -- Here you can add new Gyms to your server, etc jail..
 Config.Locations = {
 
 	Gym = {
