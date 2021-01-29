@@ -154,7 +154,7 @@ Citizen.CreateThread(function()
 
 		SetBlipSprite (blip, 311)
 		SetBlipDisplay(blip, 4)
-		SetBlipScale  (blip, 0.8)
+		SetBlipScale  (blip, 0.7)
 		SetBlipColour (blip, 9)
 		SetBlipAsShortRange(blip, true)
 
@@ -166,8 +166,6 @@ end)
 
 function CheckTraining()
 	if resting == true then
-		ESX.ShowNotification(Config.BeginRest)
-		
 		resting = false
 		Citizen.Wait(30000)
 		training = false
