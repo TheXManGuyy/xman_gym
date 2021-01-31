@@ -7,7 +7,7 @@ description 'TheXManGuyys gym'
 version '0.0.1'
 
 client_scripts {
-	'client/gym.lua',
+	'client/main.lua',
 	'config.lua'
 }
 
