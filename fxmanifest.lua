@@ -4,7 +4,7 @@ game 'gta5'
 
 description 'TheXManGuyys gym'
 
-version '0.0.1'
+version '0.0.2'
 
 client_scripts {
 	'client/main.lua',
