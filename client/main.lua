@@ -1,6 +1,4 @@
 ESX = nil
-local resting = false
-local training = false
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -25,26 +23,17 @@ Citizen.CreateThread(function()
 					if distance < Config.DrawDistance then
 						ESX.Game.Utils.DrawText3D(v.Arms[i], Config.GymDraw3D, 0.8)
 							if IsControlJustPressed(0, 38) then
-								if training == false then
-									ESX.ShowNotification(Config.BeginExercise)
-									FreezeEntityPosition(playerPed, true)
-									Citizen.Wait(5000)
-									exports['progressBars']:startUI(30000, Config.ProgressBar)
-									local playerPed = GetPlayerPed(-1)
-									TaskStartScenarioInPlace(playerPed, "world_human_muscle_free_weights", 0, true)
-									Citizen.Wait(30000)
-									ClearPedTasksImmediately(playerPed)
-									FreezeEntityPosition(playerPed, false)
-									-- Here goes the skill system event
-									exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
-									training = true
-								if training == true then
-									ESX.ShowNotification(Config.NeedRest)
-									
-									resting = true
-									
-									CheckTraining()									
-								end	
+								ESX.ShowNotification(Config.BeginExercise)
+								FreezeEntityPosition(playerPed, true)
+								Citizen.Wait(5000)
+								exports['progressBars']:startUI(30000, Config.ProgressBar)
+								local playerPed = GetPlayerPed(-1)
+								TaskStartScenarioInPlace(playerPed, "world_human_muscle_free_weights", 0, true)
+								Citizen.Wait(30000)
+								ClearPedTasksImmediately(playerPed)
+								FreezeEntityPosition(playerPed, false)
+								-- Here goes the skill system event
+								exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
 							end	
 						end
 					end
@@ -54,28 +43,19 @@ Citizen.CreateThread(function()
 					local distance = #(playerCoords - v.Pushup[i])
 
 					if distance < Config.DrawDistance then
-						ESX.Game.Utils.DrawText3D(v.Pushup[i], Config.GymDraw3D, 0.8)
+						ESX.Game.Utils.DrawText3D(v.Arms[i], Config.GymDraw3D, 0.8)
 							if IsControlJustPressed(0, 38) then
-								if training == false then
-									ESX.ShowNotification(Config.BeginExercise)
-									FreezeEntityPosition(playerPed, true)
-									Citizen.Wait(5000)
-									exports['progressBars']:startUI(30000, Config.ProgressBar)
-									local playerPed = GetPlayerPed(-1)
-									TaskStartScenarioInPlace(playerPed, "world_human_push_ups", 0, true)
-									Citizen.Wait(30000)
-									ClearPedTasksImmediately(playerPed)
-									FreezeEntityPosition(playerPed, false)
-									-- Here goes the skill system event
-									exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
-									training = true
-								if training == true then
-									ESX.ShowNotification(Config.NeedRest)
-									
-									resting = true
-									
-									CheckTraining()									
-								end	
+								ESX.ShowNotification(Config.BeginExercise)
+								FreezeEntityPosition(playerPed, true)
+								Citizen.Wait(5000)
+								exports['progressBars']:startUI(30000, Config.ProgressBar)
+								local playerPed = GetPlayerPed(-1)
+								TaskStartScenarioInPlace(playerPed, "world_human_muscle_free_weights", 0, true)
+								Citizen.Wait(30000)
+								ClearPedTasksImmediately(playerPed)
+								FreezeEntityPosition(playerPed, false)
+								-- Here goes the skill system event
+								exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
 							end	
 						end
 					end
@@ -85,28 +65,19 @@ Citizen.CreateThread(function()
 					local distance = #(playerCoords - v.Chins[i])
 
 					if distance < Config.DrawDistance then
-						ESX.Game.Utils.DrawText3D(v.Chins[i], Config.GymDraw3D, 0.8)
+						ESX.Game.Utils.DrawText3D(v.Arms[i], Config.GymDraw3D, 0.8)
 							if IsControlJustPressed(0, 38) then
-								if training == false then
-									ESX.ShowNotification(Config.BeginExercise)
-									FreezeEntityPosition(playerPed, true)
-									Citizen.Wait(5000)
-									exports['progressBars']:startUI(30000, Config.ProgressBar)
-									local playerPed = GetPlayerPed(-1)
-									TaskStartScenarioInPlace(playerPed, "prop_human_muscle_chin_ups", 0, true)
-									Citizen.Wait(30000)
-									ClearPedTasksImmediately(playerPed)
-									FreezeEntityPosition(playerPed, false)
-									-- Here goes the skill system event
-									exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
-									training = true
-								if training == true then
-									ESX.ShowNotification(Config.NeedRest)
-									
-									resting = true
-									
-									CheckTraining()									
-								end	
+								ESX.ShowNotification(Config.BeginExercise)
+								FreezeEntityPosition(playerPed, true)
+								Citizen.Wait(5000)
+								exports['progressBars']:startUI(30000, Config.ProgressBar)
+								local playerPed = GetPlayerPed(-1)
+								TaskStartScenarioInPlace(playerPed, "world_human_muscle_free_weights", 0, true)
+								Citizen.Wait(30000)
+								ClearPedTasksImmediately(playerPed)
+								FreezeEntityPosition(playerPed, false)
+								-- Here goes the skill system event
+								exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
 							end	
 						end
 					end	
@@ -116,28 +87,19 @@ Citizen.CreateThread(function()
 					local distance =  #(playerCoords - v.Situps[i])
 
 					if distance < Config.DrawDistance then
-						ESX.Game.Utils.DrawText3D(v.Situps[i], Config.GymDraw3D, 0.8)
+						ESX.Game.Utils.DrawText3D(v.Arms[i], Config.GymDraw3D, 0.8)
 							if IsControlJustPressed(0, 38) then
-								if training == false then
-									ESX.ShowNotification(Config.BeginExercise)
-									FreezeEntityPosition(playerPed, true)
-									Citizen.Wait(5000)
-									exports['progressBars']:startUI(30000, Config.ProgressBar)
-									local playerPed = GetPlayerPed(-1)
-									TaskStartScenarioInPlace(playerPed, "world_human_sit_ups", 0, true)
-									Citizen.Wait(30000)
-									ClearPedTasksImmediately(playerPed)
-									FreezeEntityPosition(playerPed, false)
-									-- Here goes the skill system event
-									exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
-									training = true
-								if training == true then
-									ESX.ShowNotification(Config.NeedRest)
-									
-									resting = true
-									
-									CheckTraining()									
-								end	
+								ESX.ShowNotification(Config.BeginExercise)
+								FreezeEntityPosition(playerPed, true)
+								Citizen.Wait(5000)
+								exports['progressBars']:startUI(30000, Config.ProgressBar)
+								local playerPed = GetPlayerPed(-1)
+								TaskStartScenarioInPlace(playerPed, "world_human_muscle_free_weights", 0, true)
+								Citizen.Wait(30000)
+								ClearPedTasksImmediately(playerPed)
+								FreezeEntityPosition(playerPed, false)
+								-- Here goes the skill system event
+								exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
 							end	
 						end
 					end	
@@ -163,15 +125,3 @@ Citizen.CreateThread(function()
 		EndTextCommandSetBlipName(blip)
 	end
 end)
-
-function CheckTraining()
-	if resting == true then
-		resting = false
-		Citizen.Wait(30000)
-		training = false
-	end
-	
-	if resting == false then
-		ESX.ShowNotification(Config.TrainAgain)
-	end
-end
