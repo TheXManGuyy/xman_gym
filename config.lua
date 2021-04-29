@@ -4,6 +4,7 @@ Config.DrawDistance = 1.0  -- The distance between you and the marker.
 -- Messages
 Config.GymDraw3D = '~g~E~s~ - Start workout'  -- A message that is displayed when you are close to an exercise.
 Config.ProgressBar = 'Doing workout'  -- Message shown on progressbar when you are doing exercise.
+Config.DoSomeThingElse = 'Do something else for a change.'
 
  -- Here you can add new Gyms to your server, etc jail..
 Config.Locations = {
