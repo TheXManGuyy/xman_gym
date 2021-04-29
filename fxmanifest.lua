@@ -4,7 +4,7 @@ game 'gta5'
 
 description 'TheXManGuyys gym'
 
-version '0.0.2'
+version '0.0.3'
 
 client_scripts {
 	'client/main.lua',
@@ -12,7 +12,6 @@ client_scripts {
 }
 
 dependencies {
-	'es_extended',
 	'progressBars',
-	'gamz-skillsystem'
+	'mythic_notify'
 }
