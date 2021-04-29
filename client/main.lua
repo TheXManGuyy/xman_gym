@@ -31,7 +31,7 @@ Citizen.CreateThread(function()
 
 						if IsControlJustPressed(0, 38) then
 							if lastposition == 1 then
-								exports["mythic_notify"]:SendAlert('error', 'Do something else for a change.')
+								exports["mythic_notify"]:SendAlert('error', Config.DoSomeThingElse)
 							else	
 								lastposition = 1
 								FreezeEntityPosition(playerPed, true)
@@ -55,7 +55,7 @@ Citizen.CreateThread(function()
 
 						if IsControlJustPressed(0, 38) then
 							if lastposition == 2 then
-								exports["mythic_notify"]:SendAlert('error', 'Do something else for a change.')
+								exports["mythic_notify"]:SendAlert('error', Config.DoSomeThingElse)
 							else
 								lastposition = 2
 								FreezeEntityPosition(playerPed, true)
@@ -79,7 +79,7 @@ Citizen.CreateThread(function()
 
 						if IsControlJustPressed(0, 38) then
 							if lastposition == 3 then
-								exports["mythic_notify"]:SendAlert('error', 'Do something else for a change.')
+								exports["mythic_notify"]:SendAlert('error', Config.DoSomeThingElse)
 							else
 								lastposition = 3
 								FreezeEntityPosition(playerPed, true)
@@ -103,7 +103,7 @@ Citizen.CreateThread(function()
 
 						if IsControlJustPressed(0, 38) then
 							if lastposition == 4 then
-								exports["mythic_notify"]:SendAlert('error', 'Do something else for a change.')
+								exports["mythic_notify"]:SendAlert('error', Config.DoSomeThingElse)
 							else
 								lastposition = 4
 								FreezeEntityPosition(playerPed, true)
