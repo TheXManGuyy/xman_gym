@@ -1,41 +1,49 @@
-ESX = nil
-
-Citizen.CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(5)
-	end
-end)	
-
 Config = {}
+local lastposition = nil
+
+function DrawText3D(x, y, z, text)
+    SetTextScale(0.35, 0.35)
+    SetTextFont(4)
+    SetTextProportional(1)
+    SetTextColour(255, 255, 255, 215)
+    SetTextEntry("STRING")
+    SetTextCentre(true)
+    AddTextComponentString(text)
+    SetDrawOrigin(x,y,z, 0)
+    DrawText(0.0, 0.0)
+    local factor = (string.len(text)) / 370
+    DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 75)
+    ClearDrawOrigin()
+end
 
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(5)
-		if training == false then
-			local playerPed = PlayerPedId()
-			local playerCoords = GetEntityCoords(playerPed)
-
+		local playerPed = PlayerPedId()
+		local playerCoords = GetEntityCoords(playerPed)
+		if not IsPedInAnyVehicle(PlayerPedId(), false) then
 			for k,v in pairs(Config.Locations) do
 				for i=1, #v.Arms, 1 do
 					local distance = #(playerCoords - v.Arms[i])
 
 					if distance < Config.DrawDistance then
-						ESX.Game.Utils.DrawText3D(v.Arms[i], Config.GymDraw3D, 0.8)
-							if IsControlJustPressed(0, 38) then
-								ESX.ShowNotification(Config.BeginExercise)
+						DrawText3D(v.Arms[i].x, v.Arms[i].y, v.Arms[i].z, Config.GymDraw3D)
+
+						if IsControlJustPressed(0, 38) then
+							if lastposition == 1 then
+								exports["mythic_notify"]:SendAlert('error', 'Tee vaheluseks midagi muud.')
+							else	
+								lastposition = 1
 								FreezeEntityPosition(playerPed, true)
-								Citizen.Wait(5000)
-								exports['progressBars']:startUI(30000, Config.ProgressBar)
 								local playerPed = GetPlayerPed(-1)
 								TaskStartScenarioInPlace(playerPed, "world_human_muscle_free_weights", 0, true)
-								Citizen.Wait(30000)
+								exports['progressBars']:startUI(30000, Config.ProgressBar)
+								Wait(30000)
 								ClearPedTasksImmediately(playerPed)
 								FreezeEntityPosition(playerPed, false)
-								-- Here goes the skill system event
-								exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
+								-- Here you can put your skilling event
 							end	
-						end
+						end	
 					end
 				end
 
@@ -43,21 +51,23 @@ Citizen.CreateThread(function()
 					local distance = #(playerCoords - v.Pushup[i])
 
 					if distance < Config.DrawDistance then
-						ESX.Game.Utils.DrawText3D(v.Arms[i], Config.GymDraw3D, 0.8)
-							if IsControlJustPressed(0, 38) then
-								ESX.ShowNotification(Config.BeginExercise)
+						DrawText3D(v.Pushup[i].x, v.Pushup[i].y, v.Pushup[i].z, Config.GymDraw3D)
+
+						if IsControlJustPressed(0, 38) then
+							if lastposition == 2 then
+								exports["mythic_notify"]:SendAlert('error', 'Tee vaheluseks midagi muud.')
+							else
+								lastposition = 2
 								FreezeEntityPosition(playerPed, true)
-								Citizen.Wait(5000)
-								exports['progressBars']:startUI(30000, Config.ProgressBar)
 								local playerPed = GetPlayerPed(-1)
-								TaskStartScenarioInPlace(playerPed, "world_human_muscle_free_weights", 0, true)
-								Citizen.Wait(30000)
+								TaskStartScenarioInPlace(playerPed, "world_human_push_ups", 0, true)
+								exports['progressBars']:startUI(30000, Config.ProgressBar)
+								Wait(30000)
 								ClearPedTasksImmediately(playerPed)
 								FreezeEntityPosition(playerPed, false)
-								-- Here goes the skill system event
-								exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
+								-- Here you can put your skilling event
 							end	
-						end
+						end	
 					end
 				end
 
@@ -65,47 +75,51 @@ Citizen.CreateThread(function()
 					local distance = #(playerCoords - v.Chins[i])
 
 					if distance < Config.DrawDistance then
-						ESX.Game.Utils.DrawText3D(v.Arms[i], Config.GymDraw3D, 0.8)
-							if IsControlJustPressed(0, 38) then
-								ESX.ShowNotification(Config.BeginExercise)
+						DrawText3D(v.Chins[i].x, v.Chins[i].y, v.Chins[i].z, Config.GymDraw3D)
+
+						if IsControlJustPressed(0, 38) then
+							if lastposition == 3 then
+								exports["mythic_notify"]:SendAlert('error', 'Tee vaheluseks midagi muud.')
+							else
+								lastposition = 3
 								FreezeEntityPosition(playerPed, true)
-								Citizen.Wait(5000)
-								exports['progressBars']:startUI(30000, Config.ProgressBar)
 								local playerPed = GetPlayerPed(-1)
-								TaskStartScenarioInPlace(playerPed, "world_human_muscle_free_weights", 0, true)
-								Citizen.Wait(30000)
+								TaskStartScenarioInPlace(playerPed, "prop_human_muscle_chin_ups", 0, true)
+								exports['progressBars']:startUI(30000, Config.ProgressBar)
+								Wait(30000)
 								ClearPedTasksImmediately(playerPed)
 								FreezeEntityPosition(playerPed, false)
-								-- Here goes the skill system event
-								exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
+								-- Here you can put your skilling event
 							end	
-						end
+						end	
 					end	
 				end
-
+				
 				for i=1, #v.Situps, 1 do
 					local distance =  #(playerCoords - v.Situps[i])
 
 					if distance < Config.DrawDistance then
-						ESX.Game.Utils.DrawText3D(v.Arms[i], Config.GymDraw3D, 0.8)
-							if IsControlJustPressed(0, 38) then
-								ESX.ShowNotification(Config.BeginExercise)
+						DrawText3D(v.Situps[i].x, v.Situps[i].y, v.Situps[i].z, Config.GymDraw3D)
+
+						if IsControlJustPressed(0, 38) then
+							if lastposition == 4 then
+								exports["mythic_notify"]:SendAlert('error', 'Tee vaheluseks midagi muud.')
+							else
+								lastposition = 4
 								FreezeEntityPosition(playerPed, true)
-								Citizen.Wait(5000)
-								exports['progressBars']:startUI(30000, Config.ProgressBar)
 								local playerPed = GetPlayerPed(-1)
-								TaskStartScenarioInPlace(playerPed, "world_human_muscle_free_weights", 0, true)
-								Citizen.Wait(30000)
+								TaskStartScenarioInPlace(playerPed, "world_human_sit_ups", 0, true)
+								exports['progressBars']:startUI(30000, Config.ProgressBar)
+								Wait(30000)
 								ClearPedTasksImmediately(playerPed)
 								FreezeEntityPosition(playerPed, false)
-								-- Here goes the skill system event
-								exports["gamz-skillsystem"]:UpdateSkill("Strength", Config.TrainAmmount)
+								-- Here you can put your skilling event
 							end	
-						end
+						end	
 					end	
 				end
-			end
-		end	
+			end	
+		end
 	end
 end)
 
@@ -117,7 +131,7 @@ Citizen.CreateThread(function()
 		SetBlipSprite (blip, 311)
 		SetBlipDisplay(blip, 4)
 		SetBlipScale  (blip, 0.7)
-		SetBlipColour (blip, 9)
+		SetBlipColour (blip, 2)
 		SetBlipAsShortRange(blip, true)
 
 		BeginTextCommandSetBlipName('STRING')
