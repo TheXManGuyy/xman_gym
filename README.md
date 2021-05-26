@@ -4,7 +4,7 @@
 
 * Requirements
   * [progressBars](https://github.com/EthanPeacock/progressBars)
-  * [mythic_notify](https://github.com/FlawwsX/mythic_notify)
+  * [mythic_notify](https://github.com/TheXManGuyy/mythic_notify)
 
 ## Installation
   * Drag 'xman_gym' to your resources folder
