@@ -1,6 +1,6 @@
 * xman_gym
 
-* This is an Gym system for ESX based servers.
+* This is an gym system for FiveM servers.
 
 * Requirements
   * [progressBars](https://github.com/EthanPeacock/progressBars)
